@@ -1,0 +1,12 @@
+2023-04-19T00:03:44.597+05:30  INFO 8784 --- [main] com.pms.PatientInfoControllerTest        : Starting PatientInfoControllerTest using Java 17.0.6 with PID 8784 (started by HP in G:\updated services\g2-patient-info-service)
+2023-04-19T00:03:44.630+05:30  INFO 8784 --- [main] com.pms.PatientInfoControllerTest        : The following 1 profile is active: "local"
+2023-04-19T00:03:58.361+05:30  INFO 8784 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-04-19T00:03:58.365+05:30  INFO 8784 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-04-19T00:03:58.377+05:30  INFO 8784 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 9 ms
+2023-04-19T00:03:59.120+05:30  INFO 8784 --- [main] com.pms.PatientInfoControllerTest        : Started PatientInfoControllerTest in 18.333 seconds (process running for 27.363)
+2023-04-19T00:49:42.247+05:30  INFO 2016 --- [main] com.pms.PatientInfoControllerTest        : Starting PatientInfoControllerTest using Java 17.0.6 with PID 2016 (started by HP in G:\updated services\g2-patient-info-service)
+2023-04-19T00:49:42.259+05:30  INFO 2016 --- [main] com.pms.PatientInfoControllerTest        : The following 1 profile is active: "local"
+2023-04-19T00:49:56.299+05:30  INFO 2016 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-04-19T00:49:56.301+05:30  INFO 2016 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-04-19T00:49:56.316+05:30  INFO 2016 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 8 ms
+2023-04-19T00:49:57.089+05:30  INFO 2016 --- [main] com.pms.PatientInfoControllerTest        : Started PatientInfoControllerTest in 18.765 seconds (process running for 29.269)
