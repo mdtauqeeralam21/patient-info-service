@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientInfoController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">g2-patient-info-service</a> &gt; <a href="index.source.html" class="el_package">com.pms.controller</a> &gt; <span class="el_source">PatientInfoController.java</span></div><h1>PatientInfoController.java</h1><pre class="source lang-java linenums">package com.pms.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.pms.entity.PatientInfo;
+import com.pms.exception.PatientServiceException;
+import com.pms.service.PatientInfoService;
+
+@RestController
+@RequestMapping(&quot;/api/v1&quot;)
+@CrossOrigin(origins=&quot;*&quot;)
+<span class="fc" id="L22">public class PatientInfoController {</span>
+
+	@Autowired
+	public PatientInfoService patientinfoservice;
+
+	/*
+	 * // this is optional just for data
+	 * 
+	 * @PostMapping(&quot;/post&quot;) public PatientInfo postDetails(@RequestBody PatientInfo
+	 * patientinfo) { return patientinfoservice.saveDetails(patientinfo); }
+	 */
+
+	// to update an patient info with the help of id
+	@PutMapping(&quot;/patient&quot;)
+	public ResponseEntity&lt;PatientInfo&gt; updateDetails(@RequestBody PatientInfo patientinfo,
+			@RequestParam(value = &quot;patientId&quot;) String patientId) throws PatientServiceException {
+<span class="fc" id="L38">		PatientInfo pat = null;</span>
+
+<span class="fc" id="L40">		pat = this.patientinfoservice.updateDetails(patientinfo, patientId);</span>
+
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">		if (pat != null) {</span>
+<span class="fc" id="L43">			System.out.println(&quot;Update successfully&quot;);</span>
+<span class="fc" id="L44">			return ResponseEntity.accepted().body(patientinfo);</span>
+		} else {
+<span class="nc" id="L46">			throw new PatientServiceException(&quot;Patient Id is not valid  &quot;+patientId);</span>
+		}
+
+	}
+
+	// to fetch patient of a particular id
+	@GetMapping(&quot;/patient&quot;)
+	public ResponseEntity&lt;PatientInfo&gt; showAvailability(@RequestParam(value = &quot;patientId&quot;) String patientId) throws PatientServiceException {
+<span class="fc" id="L54">		PatientInfo patientInfo = (PatientInfo) patientinfoservice.getpatientinfo(patientId);</span>
+		
+<span class="fc" id="L56">		return ResponseEntity.ok().body(patientInfo);</span>
+	}
+
+	// to fetch all patient present in table, this is only for admin
+	@GetMapping(&quot;/patients&quot;)
+	public ResponseEntity&lt;List&lt;PatientInfo&gt;&gt; showAllAvailability() throws PatientServiceException {
+<span class="fc" id="L62">		List&lt;PatientInfo&gt; list = patientinfoservice.showAllAvailability();</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">		if (list.size() &lt;= 0) {</span>
+<span class="nc" id="L64">			throw new PatientServiceException(&quot;Patient information does not exist &quot;);</span>
+		}
+<span class="fc" id="L66">		return ResponseEntity.ok().body(list);</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

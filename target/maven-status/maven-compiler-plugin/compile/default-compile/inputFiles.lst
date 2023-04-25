@@ -1,0 +1,11 @@
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\G2PatientInfoServiceApplication.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\repository\PatientInfoRepository.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\exception\ErrorResponse.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\exception\PatientServiceException.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\entity\PatientInfo.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\service\impl\PatientInfoServiceImpl.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\service\PatientInfoService.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\controller\CentralizedLogging.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\controller\PatientInfoController.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\exception\GlobalExceptionHandler.java
+G:\updated services\g2-patient-info-service\src\main\java\com\pms\entity\CustomIdGenerator.java
